@@ -25,7 +25,12 @@ int main()
 {
 	double x;
 	printf("Please insert a real numbr: ");
-	scanf("%lf",&x);
+	int status = scanf(" %lf",&x);
+	if (status != 1)
+	{
+		printf("\nError in taking a real number input\n\n");
+		return-1; // return -1 to notify program didn't run well
+	}
 	double v1 = f1(x);
 	double v2 = f2(x);
 	double v3 = f3(x);

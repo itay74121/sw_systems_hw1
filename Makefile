@@ -6,10 +6,10 @@ mymaths: mains
 mymathd: maind
 
 mains: main.o libmyMath.a 
-	${gcc} main.o -L . -lmyMath -o mains
+	${gcc} main.o  libmyMath.a -o mains
 
 maind: main.o libmyMath.so
-	${gcc} main.o -L. -lmyMath -o maind
+	${gcc} main.o  libmyMath.so -o maind
 
 libmyMath.a: power1.o basicMath1.o myMath.h
 	 ar -rcs libmyMath.a power1.o basicMath1.o
