@@ -1,14 +1,15 @@
 gcc=gcc -Wall
-all: mymaths mymathd 
 
-mymaths: mains
+all: mains maind	
 
-mymathd: maind
+mymaths: libmyMath.a
 
-mains: main.o libmyMath.a 
+mymathd: libmyMath.so
+
+mains: main.o mymaths
 	${gcc} main.o  libmyMath.a -o mains
 
-maind: main.o libmyMath.so
+maind: main.o mymathd
 	${gcc} main.o  libmyMath.so -o maind
 
 libmyMath.a: power1.o basicMath1.o 
@@ -18,7 +19,7 @@ libmyMath.so:  power2.o basicMath2.o
 	${gcc} -shared power2.o basicMath2.o -o libmyMath.so
 
 main.o: main.c 
-	${gcc} -c -fPIC main.c -o main.o -I. 
+	${gcc} -c  main.c -o main.o -I. 
 
 
 power2.o: power.c myMath.h
