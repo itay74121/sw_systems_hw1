@@ -11,10 +11,10 @@ mains: main.o libmyMath.a
 maind: main.o libmyMath.so
 	${gcc} main.o  libmyMath.so -o maind
 
-libmyMath.a: power1.o basicMath1.o myMath.h
+libmyMath.a: power1.o basicMath1.o 
 	 ar -rcs libmyMath.a power1.o basicMath1.o
 
-libmyMath.so:  power2.o basicMath2.o myMath.h
+libmyMath.so:  power2.o basicMath2.o 
 	${gcc} -shared power2.o basicMath2.o -o libmyMath.so
 
 main.o: main.c 

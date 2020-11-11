@@ -12,12 +12,12 @@ double f1(double x)
 
 double f2(double x)
 {
-	return mul(3,x) + mul(2,Power(x,2));
+	return mul(x,3) + mul(Power(x,2),2);
 }
 
 double f3(double x)
 {
-	return div(mul(4,Power(x,3)),5) - mul(2,x);
+	return div(mul(Power(x,3),4),5) - mul(x,2);
 }
 
 
