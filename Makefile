@@ -7,7 +7,7 @@ mymaths: libmyMath.a
 mymathd: libmyMath.so
 
 mains: main.o mymaths
-	${gcc} main.o  libmyMath.a -o mains
+	${gcc} $<  libmyMath.a -o mains
 
 maind: main.o mymathd
 	${gcc} main.o  libmyMath.so -o maind
