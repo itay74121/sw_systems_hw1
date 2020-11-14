@@ -35,12 +35,12 @@ int main()
 	double x; // double var to take input 
 	printf("Please insert a real numbr: "); // print to make pretty 
 	int status = scanf(" %lf",&x); // take the input from the user
-	if (status != 1) // check that the user inserted valid input 
+	if (status != 1) // check that the user inserted valid input if not we are unable to continue 
 	{
 		printf("\nError in taking a real number input\n\n");
 		return-1; // return -1 to notify program didn't run well
 	}
-	double v1 = f1(x); // activate all function 
+	double v1 = f1(x); // activate all function and get all values from them 
 	double v2 = f2(x); // 
 	double v3 = f3(x); // 
 	printf("The value of f(x)=e^x + x^3-2 at point %lf is:%0.4lf\n",x,v1);   // printing all values 
